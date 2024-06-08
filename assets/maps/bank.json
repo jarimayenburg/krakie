@@ -144,7 +144,7 @@
          "starty":-16,
          "type":"tilelayer",
          "visible":true,
-         "width":64,
+         "width":48,
          "x":0,
          "y":0
         }],
@@ -158,7 +158,7 @@
         {
          "columns":1,
          "firstgid":1,
-         "image":"..\/tilemaps\/bank.png",
+         "image":"..\/tilesets\/bank.png",
          "imageheight":32,
          "imagewidth":32,
          "margin":0,
@@ -171,7 +171,7 @@
         {
          "columns":11,
          "firstgid":2,
-         "image":"..\/tilemaps\/krakie_character.png",
+         "image":"..\/tilesets\/krakie_character.png",
          "imageheight":64,
          "imagewidth":352,
          "margin":0,
