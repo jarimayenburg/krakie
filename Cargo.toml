@@ -1,0 +1,10 @@
+[package]
+name = "krakie"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+getrandom = "0.2.15"
+ggez = "0.9.3"
+miniquad = "0.4.2"
+oorandom = "11.1.3"
