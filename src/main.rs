@@ -40,21 +40,22 @@ async fn main() {
     }
 
     let mut world = World::new();
-    world.add_static_tiled_layer(static_colliders, 32., 32., 30, 1);
+    world.add_static_tiled_layer(static_colliders, 32., 32., 36, 1);
 
     let mut player = Player {
         collider: world.add_actor(vec2(50.0, 80.0), 32, 64),
         speed: vec2(0., 0.),
     };
 
-    let camera = Camera2D::from_display_rect(Rect::new(0.0, 640.0, 960.0, -640.0));
+    let camera = Camera2D::from_display_rect(Rect::new(0.0, 704.0, 1152.0, -704.0));
 
     loop {
         clear_background(WHITE);
 
         set_camera(&camera);
 
-        tiled_map.draw_tiles("banklayer-1", Rect::new(0.0, 0.0, 960.0, 640.0), None);
+        tiled_map.draw_tiles("bank-bg", Rect::new(0.0, 0.0, 1152.0, 704.0), None);
+        tiled_map.draw_tiles("banklayer-1", Rect::new(0.0, 0.0, 1152.0, 704.0), None);
 
         // draw player
         {
