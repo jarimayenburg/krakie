@@ -1,1 +1,3 @@
 /target
+*.tiled-project
+*.tiled-session

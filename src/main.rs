@@ -47,14 +47,14 @@ async fn main() {
         speed: vec2(0., 0.),
     };
 
-    let camera = Camera2D::from_display_rect(Rect::new(0.0, 608.0, 960.0, -608.0));
+    let camera = Camera2D::from_display_rect(Rect::new(0.0, 640.0, 960.0, -640.0));
 
     loop {
         clear_background(WHITE);
 
         set_camera(&camera);
 
-        tiled_map.draw_tiles("banklayer-1", Rect::new(0.0, 0.0, 960.0, 608.0), None);
+        tiled_map.draw_tiles("banklayer-1", Rect::new(0.0, 0.0, 960.0, 640.0), None);
 
         // draw player
         {
