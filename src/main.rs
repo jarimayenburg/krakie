@@ -11,6 +11,7 @@ struct Player {
 
 #[macroquad::main("Krakie")]
 async fn main() {
+    let start_pos_l1 = vec2(50.0, 80.0);
     let tileset_bank = load_texture("assets/tilesets/bank.png").await.unwrap();
     tileset_bank.set_filter(FilterMode::Nearest);
 
@@ -43,7 +44,7 @@ async fn main() {
     world.add_static_tiled_layer(static_colliders, 32., 32., 36, 1);
 
     let mut player = Player {
-        collider: world.add_actor(vec2(50.0, 80.0), 32, 64),
+        collider: world.add_actor(start_pos_l1, 32, 64),
         speed: vec2(0., 0.),
     };
 
@@ -96,6 +97,11 @@ async fn main() {
 
             world.move_h(player.collider, player.speed.x * get_frame_time());
             world.move_v(player.collider, player.speed.y * get_frame_time());
+        }
+
+        // Force player position reset on CTRL+R
+        if is_key_down(KeyCode::LeftControl) && is_key_pressed(KeyCode::R) {
+          world.set_actor_position(player.collider, start_pos_l1)
         }
 
         next_frame().await
